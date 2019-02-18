@@ -1,0 +1,61 @@
+# subset from @Core
+coreutils
+bash
+grep
+gawk
+basesystem
+rpm
+initscripts
+iproute
+
+# subset from @Base
+less
+make
+mktemp
+vim-minimal
+yum
+#authconfig
+#dhclient
+chkconfig
+# graphical boot helper (used by initscripts)
+plymouth
+# ~root/.*
+rootfiles
+
+# redhat-release
+fedora-release
+
+# things we need that aren't there
+curl
+authconfig
+cpio
+file-libs
+filesystem
+findutils
+gamin
+gmp
+gnupg2
+gpgme
+gzip
+hardlink
+hwdata
+iptables
+kernel
+lua
+linux-atm-libs
+modutils
+ncurses-devel
+nss
+openldap
+pinentry
+pkgconfig
+pth
+python-pycurl
+rpm-build
+rpm-libs
+shared-mime-info
+slang
+ustr
+
+# required to fix RPM DB
+/usr/bin/db_load
