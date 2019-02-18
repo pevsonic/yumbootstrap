@@ -92,7 +92,7 @@ class YumConfig:
 #   * should `chroot' go through YumConfig?
 class Yum:
   def __init__(self, chroot, yum_conf = None, yum = '/usr/bin/yum',
-               interactive = False):
+               interactive = False, ignoregpgcheck = False):
     self.chroot = os.path.abspath(chroot)
     if yum_conf is not None:
       self.yum_conf = yum_conf
@@ -116,6 +116,9 @@ class Yum:
       opts.extend(['-e', '1', '-d', '2'])
     else:
       opts.extend(['-e', '1', '-d', '1'])
+
+    if self.ignoregpgcheck:
+      opts.extend(['--ignoregpgcheck'])
 
     return opts
 

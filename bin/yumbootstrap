@@ -99,6 +99,11 @@ o.add_option(
   action = 'store_false', dest = 'interactive', default = True,
   help = 'run in non-interactive mode (e.g. no progress bars)',
 )
+o.add_option(
+  '--ignoregpgcheck',
+  action = 'store_true', dest = 'ignoregpgcheck', default = False,
+  help = 'disable gpg checking of packages (use with caution)',
+)
 #o.add_option(
 #  '--arch', # TODO
 #  action = 'store', default = os.uname()[4],
@@ -329,6 +334,7 @@ def do_install(opts, suite_name, target):
     chroot = target,
     yum_conf = yum_conf,
     interactive = opts.interactive,
+    ignoregpgcheck = opts.ignoregpgcheck,
   )
 
   exclude = suite.packages.exclude + opts.exclude
